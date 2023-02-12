@@ -1,0 +1,32 @@
+.mainCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 30px;
+
+  .card {
+    background-color: #fff;
+    display: flex;
+    align-self: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 50px 0 #555;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scaleY(1.2);
+    }
+
+    img {
+      border-radius: 50%;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}

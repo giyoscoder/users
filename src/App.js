@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import style from "./App.module.scss";
+import { instance } from "./Utils/axiosIntance";
+import { useEffect, useState } from "react";
+import { Link, Routes, Route } from "react-router-dom";
+import { SingleUser } from "./Pages/singleUser/SingleUser";
+import { AllUsers } from "./Pages/allUsers/allUsers";
+import { EditUser } from "./Pages/editUser/editUser";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className={style.title}>Part of Users</h1>
+      <Routes>
+        <Route path="/users" element={<AllUsers />} />
+        <Route path="/users/:id" element={<SingleUser />} />
+        <Route path="/edit/:id" element={<EditUser />} />
+      </Routes>
+    </>
   );
 }
 
